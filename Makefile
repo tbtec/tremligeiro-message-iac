@@ -1,12 +1,16 @@
-AWS_BUCKET_TERRAFORM=tremligeiro-tf
+AWS_BUCKET_TERRAFORM=tremligeiro-tc4-tf
 
 tf-init:
 	@cd tf \
 		&& terraform init -backend-config="bucket=${AWS_BUCKET_TERRAFORM}"
 
+tf-validate:
+	@cd tf \
+		&& terraform validate  
+
 tf-plan:
 	@cd tf \
-		&& terraform plan 
+		&& terraform plan
 		
 tf-delete:
 	@cd tf \
